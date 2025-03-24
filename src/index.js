@@ -43,5 +43,7 @@ const fetchYandexData = async () => {
       Authorization: `OAuth ${accessToken}`,
     },
   });
+  if (!response.ok) throw new Error("Ошибка при получении данных");
+  console.log(await response.json());
   return await response.json();
 }
