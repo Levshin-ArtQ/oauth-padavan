@@ -37,7 +37,9 @@ const authorize = async ({
   console.log(defaultAvatarId)
   const nameHtml = `<div className="name">${displayName}</div>`;
   console.log(avatarHtml)
-  document.getElementById("auth").innerHTML = `${avatarImg}${nameHtml}`;
+  document.getElementById("auth").innerHTML = `${nameHtml}`;
+  document.getElementById("auth").append(avatarImg);
+  
 }
 
 const fetchYandexData = async (access_token) => {
