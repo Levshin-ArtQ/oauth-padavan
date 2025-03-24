@@ -19,8 +19,8 @@ window.onload = () => {
     )
       .then(({ handler }) => handler())
       .then((data) => {
-        // localStorage.setItem("accessToken", data.access_token);
-        // authorize(fetchYandexData());
+        localStorage.setItem("accessToken", data.access_token);
+        authorize(fetchYandexData());
         console.log("Сообщение с токеном", data)
       })
       .catch((error) => console.log("Обработка ошибки", error));
