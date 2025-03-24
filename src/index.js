@@ -37,6 +37,9 @@ const authorize = ({
 }
 
 const fetchYandexData = async () => {
+  if (!localStorage.getItem("accessToken")) {
+    console.log('no token in fetch')
+  }
   const accessToken = localStorage.getItem("accessToken");
   const response = await fetch(`https://login.yandex.ru/info?forma=json`, {
     headers: {
