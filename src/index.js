@@ -33,12 +33,12 @@ const authorize = async ({
   display_name: displayName,
 }) => {
   const avatarHtml = `<div className="avatar" style="background-image:url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')"></div>`;
-  const avatarImg = document.createElement('div').style.backgroundImage=`url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')`;
-  console.log(defaultAvatarId)
+  let avatarImg = document.createElement('div');
+  avatarImg.style.backgroundImage = `url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')`;
   const nameHtml = `<div className="name">${displayName}</div>`;
   console.log(avatarHtml)
   document.getElementById("auth").innerHTML = `${nameHtml}`;
-  document.getElementById("auth").append(avatarImg);
+  document.getElementById("auth").appendChild(avatarImg);
   
 }
 
