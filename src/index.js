@@ -38,8 +38,11 @@ const authorize = async ({
   avatarImg.style.backgroundImage = `url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')`;
   const nameHtml = `<div className="name">${displayName}</div>`;
   console.log(avatarHtml)
-  document.getElementById("auth").innerHTML = `${nameHtml}`;
-  document.getElementById("auth").appendChild(avatarImg);
+  const auth = document.getElementById("auth");
+  auth.innerHTML = `${nameHtml}`;
+  auth.appendChild(avatarImg);
+  auth.classList.add('auth-done');
+  
   
 }
 
