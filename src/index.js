@@ -29,7 +29,7 @@ window.onload = () => {
 
 const authorize = async ({
   default_avatar_id: defaultAvatarId,
-  default_name: displayName,
+  display_name: displayName,
 }) => {
   const avatarHtml = `<div className="avatar" style="background-image:url('https://avatars.mds.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')"></div>`;
   const nameHtml = `<div className="name">${displayName}</div>`;
