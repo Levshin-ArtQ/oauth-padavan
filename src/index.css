@@ -4,7 +4,7 @@ body {
   justify-content: center;
   align-items: center;
   background-color: #fff;
-  
+
 }
 
 .auth {
@@ -14,7 +14,6 @@ body {
 }
 
 .auth-done {
-  display: flex;
   align-items: end;
 }
 
