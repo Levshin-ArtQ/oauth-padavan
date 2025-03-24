@@ -20,14 +20,14 @@ window.onload = () => {
       .then(({ handler }) => handler())
       .then((data) => {
         localStorage.setItem("accessToken", data.access_token);
-        authorize(fetchYandexData());
+        authorize(fetchYandexData(data.access_token));
         console.log("Сообщение с токеном", data)
       })
       .catch((error) => console.log("Обработка ошибки", error));
   };
 };
 
-const authorize = ({
+const authorize = async ({
   default_avatar_id: defaultAvatarId,
   default_name: displayName,
 }) => {
@@ -36,16 +36,17 @@ const authorize = ({
   document.getElementById("auth").innerHTML = avatarHtml + nameHtml;
 }
 
-const fetchYandexData = async () => {
+const fetchYandexData = async (access_token) => {
   if (!localStorage.getItem("accessToken")) {
     console.log('no token in fetch')
   }
   const accessToken = localStorage.getItem("accessToken");
-  const response = await fetch(`https://login.yandex.ru/info?forma=json`, {
+  const response = await fetch(`https://login.yandex.ru/info?format=json`, {
     headers: {
-      Authorization: `OAuth ${accessToken}`,
+      Authorization: `OAuth ${access_token}`,
     },
   });
-  if (!response.ok) throw new Error("Ошибка при получении данных");
-  return await response.json();
+  const data = await response.json();
+  console.log('user data', data)
+  return data;
 }
