@@ -35,7 +35,8 @@ const authorize = async ({
   const avatarHtml = `<div className="avatar" style="background-image:url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')"></div>`;
   console.log(defaultAvatarId)
   const nameHtml = `<div className="name">${displayName}</div>`;
-  document.getElementById("auth").innerHTML = avatarHtml + nameHtml;
+  console.log(avatarHtml)
+  document.getElementById("auth").innerHTML = `$(avatarHtml)$(nameHtml)`;
 }
 
 const fetchYandexData = async (access_token) => {
