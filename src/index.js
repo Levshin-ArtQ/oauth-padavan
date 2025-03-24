@@ -4,9 +4,9 @@ window.onload = () => {
       {
         client_id: "51ea177b9654430f84b347c87bcbddcc",
         response_type: "token",
-        redirect_uri: "https://oauth-padavan.vercel.app/token.html",
+        redirect_uri: "https://examplesite.com/suggest/token",
       },
-      "https://oauth-padavan.vercel.app/",
+      "https://examplesite.com",
       {
         view: "button",
         parentId: "buttonContainer",
