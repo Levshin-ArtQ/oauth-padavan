@@ -47,6 +47,5 @@ const fetchYandexData = async () => {
     },
   });
   if (!response.ok) throw new Error("Ошибка при получении данных");
-  console.log(await response.json());
   return await response.json();
 }
