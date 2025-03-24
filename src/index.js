@@ -18,9 +18,10 @@ window.onload = () => {
       }
     )
       .then(({ handler }) => handler())
-      .then((data) => {
+      .then(async (data) => {
+        const result = await fetchYandexData(data.access_token);
         localStorage.setItem("accessToken", data.access_token);
-        authorize(fetchYandexData(data.access_token));
+        authorize(result);
         console.log("Сообщение с токеном", data)
       })
       .catch((error) => console.log("Обработка ошибки", error));
