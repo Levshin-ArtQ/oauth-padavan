@@ -34,6 +34,7 @@ const authorize = async ({
 }) => {
   const avatarHtml = `<div className="avatar" style="background-image:url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')"></div>`;
   let avatarImg = document.createElement('div');
+  avatarImg.classList.add('avatar');
   avatarImg.style.backgroundImage = `url('https://avatars.yandex.net/get-yapic/${defaultAvatarId}/islands-middle')`;
   const nameHtml = `<div className="name">${displayName}</div>`;
   console.log(avatarHtml)
